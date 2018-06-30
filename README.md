@@ -1,4 +1,4 @@
-###Overview
+### Overview
 
 This project was prepared for the Udacity Front-End Developer Nanodegree.
 
@@ -12,12 +12,15 @@ The testing code is located in the file feedreader.js.
 
 To run the app open index.html in a browser such as Google Chrome or Mozilla Firefox.
 
-###Tests
+### Tests
 
 
 The tests include:
-*a test that loops through each feed in the allFeeds object and ensures it has a URL and name defined and that the URL and name is not empty.
-*a 'Menu' suite that ensures the menu element is hidden by default but toggles visibility when clicked.
-*a test suite 'Initial Entries' that ensures when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container.
-*a test suite 'New Feed Selection'  ensures when a new feed is loaded by the loadFeed function the content changes.
+* a test that loops through each feed in the allFeeds object and ensures it has a URL and name defined and that the URL and name is not empty.
+* a 'Menu' suite that ensures the menu element is hidden by default but toggles visibility when clicked.
+* a test suite 'Initial Entries' that ensures when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container.
+* a test suite 'New Feed Selection'  ensures when a new feed is loaded by the loadFeed function the content changes.
 
+Thank you
+
+Kata Katona
