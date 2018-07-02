@@ -97,7 +97,7 @@ $(function() {
         });
 
         it('there is an .entry within .feed container after loadFeed()', (function(done) {
-            var entryNum = document.getElementsByClassName('entry').length;
+            var entryNum = ($('.feed .entry')).length;
             expect(entryNum).toBeGreaterThan(0);
             done();
         }));
@@ -111,14 +111,24 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
+        //need to control asynchronous function's execution
+        var feedInner,
+            newFeedInner;
 
-        var feedInner = document.querySelector('.feed').innerHTML;
+        //new feeds need to be loaded after first feeds ran
         beforeEach(function(done) {
             loadFeed(0, function() {
                 done();
+                var feedInner = document.querySelector('.feed').innerHTML;
+                loadFeed(1, function() {
+
+                    var newFeedInner = document.querySelector('.feed').innerHTML;
+                    done();
+                });
             });
         });
 
+        //feeds are loaded, begin test
         it('ensures the content changes', (function(done) {
             var newFeedInner = document.querySelector('.feed').innerHTML;
             expect(feedInner).not.toBe(newFeedInner);
