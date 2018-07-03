@@ -91,9 +91,7 @@ $(function() {
          */
 
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         it('there is an .entry within .feed container after loadFeed()', (function(done) {
@@ -116,7 +114,7 @@ $(function() {
             newFeedInner;
 
         //new feeds need to be loaded after first feeds ran
-        beforeEach(function(done) {
+        /*beforeEach(function(done) {
             loadFeed(0, function() {
                 done();
                 var feedInner = document.querySelector('.feed').innerHTML;
@@ -126,11 +124,23 @@ $(function() {
                     done();
                 });
             });
+        });*/
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+
+                // get feeds
+                feedInner = $('.feed').html();
+                loadFeed(1, function() {
+
+                    // feeds second time
+                    newFeedInner = $('.feed').html();
+                    done();
+                })
+            })
         });
 
         //feeds are loaded, begin test
         it('ensures the content changes', (function(done) {
-            var newFeedInner = document.querySelector('.feed').innerHTML;
             expect(feedInner).not.toBe(newFeedInner);
             done();
         }));
