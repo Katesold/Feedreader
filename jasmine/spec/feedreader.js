@@ -114,17 +114,7 @@ $(function() {
             newFeedInner;
 
         //new feeds need to be loaded after first feeds ran
-        /*beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-                var feedInner = document.querySelector('.feed').innerHTML;
-                loadFeed(1, function() {
 
-                    var newFeedInner = document.querySelector('.feed').innerHTML;
-                    done();
-                });
-            });
-        });*/
         beforeEach(function(done) {
             loadFeed(0, function() {
 
