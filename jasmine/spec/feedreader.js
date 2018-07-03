@@ -75,9 +75,9 @@ $(function() {
             var body = document.querySelector('body');
 
             $('.menu-icon-link').click();
-            expect(body.className).not.toContain('menu-hidden');
+            expect(body.classList).not.toContain('menu-hidden');
             $('.menu-icon-link').click();
-            expect(body.className).toContain('menu-hidden');
+            expect(body.classList).toContain('menu-hidden');
 
         });
     });
