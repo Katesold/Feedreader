@@ -62,7 +62,8 @@ $(function() {
          */
         it('is hidden by default', function() {
             var body = document.querySelector('body');
-            expect(body.classList).toContain('menu-hidden');
+            expect(body.classList.contains('menu-hidden')).toBe(true);
+            // expect(body.classList).toContain('menu-hidden');
         });
 
 
